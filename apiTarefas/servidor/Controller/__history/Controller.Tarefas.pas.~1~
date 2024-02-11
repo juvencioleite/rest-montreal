@@ -1,0 +1,216 @@
+unit Controller.Tarefa;
+
+interface
+
+uses Horse, System.JSON, System.SysUtils, Model.Tarefa,
+     FireDAC.Comp.Client, Data.DB, DataSet.Serialize;
+
+procedure Registry;
+
+implementation
+
+procedure ListarTarefas(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    tarefa : TTarefa;
+    qry : TFDQuery;
+    erro : string;
+    arrayTarefas : TJSONArray;
+begin
+    try
+        tarefa := TTarefa.Create;
+    except
+        res.Send('Erro ao conectar com o banco').Status(500);
+        exit;
+    end;
+
+    try
+      try
+        qry := tarefa.ListarTarefa('', erro);
+
+          arrayTarefas := qry.ToJSONArray();
+
+          res.Send<TJSONArray>(arrayTarefas);
+      except
+          res.Send('Erro ao acessar tabela ' + erro).Status(500);
+          exit;
+      end;
+
+    finally
+        qry.Free;
+        tarefa.Free;
+    end;
+end;
+
+procedure ListarTarefaID(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    tarefa : TTarefa;
+    objTarefas: TJSONObject;
+    qry : TFDQuery;
+    erro : string;
+begin
+    try
+        tarefa := TTarefa.Create;
+        tarefa.ID_Tarefa := Req.Params['id'].ToInteger;
+    except
+        res.Send('Erro ao conectar com o banco').Status(500);
+        exit;
+    end;
+
+    try
+        qry := tarefa.ListarTarefa('', erro);
+
+        if qry.RecordCount > 0 then
+        begin
+            objTarefas := qry.ToJSONObject;
+            res.Send<TJSONObject>(objTarefas)
+        end
+        else
+            res.Send('Tarefa não encontrado').Status(404);
+    finally
+        qry.Free;
+        tarefa.Free;
+    end;
+end;
+
+procedure AddTarefa(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    tarefa : TTarefa;
+    objTarefa: TJSONObject;
+    erro : string;
+    body  : TJsonValue;
+begin
+    // Conexao com o banco...
+    try
+        tarefa := TTarefa.Create;
+    except
+        res.Send('Erro ao conectar com o banco').Status(500);
+        exit;
+    end;
+
+
+    try
+        try
+            body := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(req.Body), 0) as TJsonValue;
+
+            tarefa.NOME := body.GetValue<string>('nome', '');
+            tarefa.EMAIL := body.GetValue<string>('email', '');
+            tarefa.FONE := body.GetValue<string>('fone', '');
+            tarefa.Inserir(erro);
+
+            body.Free;
+
+            if erro <> '' then
+                raise Exception.Create(erro);
+
+        except on ex:exception do
+            begin
+                res.Send(ex.Message).Status(400);
+                exit;
+            end;
+        end;
+
+
+        objTarefa := TJSONObject.Create;
+        objTarefa.AddPair('id_Tarefa', tarefa.ID_Tarefa.ToString);
+
+        res.Send<TJSONObject>(objTarefa).Status(201);
+    finally
+        tarefa.Free;
+    end;
+end;
+
+procedure DeleteTarefa(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    tarefa : TTarefa;
+    objTarefa: TJSONObject;
+    erro : string;
+begin
+    // Conexao com o banco...
+    try
+        tarefa := TTarefa.Create;
+    except
+        res.Send('Erro ao conectar com o banco').Status(500);
+        exit;
+    end;
+
+    try
+        try
+            tarefa.ID_Tarefa := Req.Params['id'].ToInteger;
+
+            if NOT tarefa.Excluir(erro) then
+                raise Exception.Create(erro);
+
+        except on ex:exception do
+            begin
+                res.Send(ex.Message).Status(400);
+                exit;
+            end;
+        end;
+
+
+        objTarefa := TJSONObject.Create;
+        objTarefa.AddPair('id_Tarefa', tarefa.ID_Tarefa.ToString);
+
+        res.Send<TJSONObject>(objTarefa);
+    finally
+        tarefa.Free;
+    end;
+end;
+
+procedure EditarTarefa(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+    tarefa : TTarefa;
+    objTarefa: TJSONObject;
+    erro : string;
+    body : TJsonValue;
+begin
+    // Conexao com o banco...
+    try
+        tarefa := TTarefa.Create;
+    except
+        res.Send('Erro ao conectar com o banco').Status(500);
+        exit;
+    end;
+
+    try
+        try
+            body := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(req.Body), 0) as TJsonValue;
+
+            tarefa.ID_Tarefa := body.GetValue<integer>('id_Tarefa', 0);
+            tarefa.NOME := body.GetValue<string>('nome', '');
+            tarefa.EMAIL := body.GetValue<string>('email', '');
+            tarefa.FONE := body.GetValue<string>('fone', '');
+            tarefa.Editar(erro);
+
+            body.Free;
+
+            if erro <> '' then
+                raise Exception.Create(erro);
+
+        except on ex:exception do
+            begin
+                res.Send(ex.Message).Status(400);
+                exit;
+            end;
+        end;
+
+
+        objTarefa := TJSONObject.Create;
+        objTarefa.AddPair('id_Tarefa', tarefa.ID_Tarefa.ToString);
+
+        res.Send<TJSONObject>(objTarefa).Status(200);
+    finally
+        tarefa.Free;
+    end;
+end;
+
+procedure Registry;
+begin
+    THorse.Get('/Tarefa', ListarTarefas);
+    THorse.Get('/Tarefa/:id', ListarTarefaID);
+    THorse.Post('/Tarefa', AddTarefa);
+    THorse.Put('/Tarefa', EditarTarefa);
+    THorse.Delete('/Tarefa/:id', DeleteTarefa);
+end;
+
+end.

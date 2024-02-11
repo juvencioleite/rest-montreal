@@ -1,0 +1,113 @@
+
+CREATE TABLE tb_tarefas (
+  cd_tarefa INT  IDENTITY(1,1) NOT NULL,
+  ds_titulo VARCHAR(100),
+  ds_descricao VARCHAR(300),
+  fl_status VARCHAR(30),
+  fl_prioridade VARCHAR(30),
+  dt_inicio DATE,
+  dt_fim DATE
+);
+go
+
+-- Script 1
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer compras', 'Ir ao supermercado e comprar os itens da lista', 'NOVA', 'MEDIA', '2023-01-05', '2023-01-07');
+
+-- Script 2
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Estudar para a prova', 'Revisar os conteúdos de matemática e português', 'ANDAMENTO', 'ALTA', '2023-02-10', '2023-02-15');
+
+-- Script 3
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Assistir um filme', 'Escolher um filme na Netflix e relaxar', 'FINALIZADA', 'BAIXA', '2023-03-01', '2023-03-02');
+
+-- Script 4
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Lavar o carro', 'Levar o carro ao lava-jato e fazer uma limpeza completa', 'NOVA', 'BAIXA', '2023-04-20', '2023-04-22');
+
+-- Script 5
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Preparar uma apresentação', 'Criar um slide com os resultados do projeto', 'ANDAMENTO', 'MEDIA', '2023-05-12', '2023-05-17');
+
+-- Script 6
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um bolo', 'Seguir a receita de bolo de chocolate e assar no forno', 'FINALIZADA', 'MEDIA', '2023-06-05', '2023-06-06');
+
+-- Script 7
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Ler um livro', 'Escolher um livro de ficção e ler pelo menos um capítulo por dia', 'ANDAMENTO', 'BAIXA', '2023-07-01', '2023-07-10');
+
+-- Script 8
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Pagar as contas', 'Verificar o saldo da conta e pagar as contas do mês', 'NOVA', 'ALTA', '2023-08-25', '2023-08-31');
+
+-- Script 9
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma viagem', 'Planejar um roteiro de viagem e reservar passagens e hospedagem', 'FINALIZADA', 'MEDIA', '2023-09-10', '2023-09-15');
+
+-- Script 10
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Organizar o armário', 'Separar as roupas que não usa mais e doar para uma instituição', 'NOVA', 'BAIXA', '2023-10-20', '2023-10-22');
+
+-- Script 11
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma festa', 'Convidar os amigos, comprar os comes e bebes e decorar o ambiente', 'ANDAMENTO', 'ALTA', '2023-11-01', '2023-11-03');
+
+-- Script 12
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Aprender um idioma', 'Escolher um idioma de interesse e fazer um curso online', 'FINALIZADA', 'MEDIA', '2023-12-01', '2023-12-10');
+
+-- Script 13
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma doação', 'Escolher uma causa social e fazer uma doação online', 'NOVA', 'BAIXA', '2024-01-05', '2024-01-07');
+
+-- Script 14
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um curso', 'Escolher um tema de interesse e se inscrever em um curso online', 'ANDAMENTO', 'MEDIA', '2024-02-10', '2024-02-15');
+
+-- Script 15
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma reserva', 'Escolher um restaurante e fazer uma reserva online', 'FINALIZADA', 'BAIXA', '2024-03-01', '2024-03-02');
+
+
+-- Script 16
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma caminhada', 'Escolher um parque ou uma praia e caminhar por pelo menos 30 minutos', 'NOVA', 'BAIXA', '2024-04-20', '2024-04-22');
+
+-- Script 17
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um jantar', 'Escolher uma receita e preparar um jantar especial', 'ANDAMENTO', 'MEDIA', '2024-05-12', '2024-05-17');
+
+-- Script 18
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma limpeza', 'Limpar a casa e jogar fora o que não precisa mais', 'FINALIZADA', 'MEDIA', '2024-06-05', '2024-06-06');
+
+-- Script 19
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma surpresa', 'Escolher uma pessoa querida e fazer uma surpresa para ela', 'NOVA', 'ALTA', '2024-07-01', '2024-07-10');
+
+-- Script 20
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um exercício', 'Escolher uma atividade física e fazer por pelo menos 15 minutos', 'ANDAMENTO', 'BAIXA', '2024-08-25', '2024-08-31');
+
+-- Script 21
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um desenho', 'Escolher um tema e fazer um desenho com lápis e papel', 'FINALIZADA', 'BAIXA', '2024-09-10', '2024-09-15');
+
+-- Script 22
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um teste', 'Escolher um assunto e fazer um teste online para avaliar seus conhecimentos', 'NOVA', 'MEDIA', '2024-10-20', '2024-10-22');
+
+-- Script 23
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer um jogo', 'Escolher um gênero e fazer um jogo simples usando uma ferramenta online', 'ANDAMENTO', 'MEDIA', '2024-11-01', '2024-11-03');
+
+-- Script 24
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma pesquisa', 'Escolher um tema de interesse e fazer uma pesquisa online sobre ele', 'FINALIZADA', 'MEDIA', '2024-12-01', '2024-12-10');
+
+-- Script 25
+INSERT INTO tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)
+VALUES ( 'Fazer uma meditação', 'Escolher um ambiente tranquilo e fazer uma meditação guiada por 10 minutos', 'NOVA', 'BAIXA', '2025-01-05', '2025-01-07');
+

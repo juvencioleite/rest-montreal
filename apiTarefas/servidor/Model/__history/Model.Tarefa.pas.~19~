@@ -1,0 +1,290 @@
+unit Model.Tarefa;
+
+interface
+
+uses FireDAC.Comp.Client, Data.DB, System.SysUtils, Model.Connection;
+
+type
+    TTarefa = class
+    private
+        Fcd_tarefa: Integer;
+        Fds_titulo: string;
+        Fds_descricao: string;
+        Ffl_status: string;
+        Ffl_prioridade: string;
+        Fdt_inicio: TDateTime;
+        Fdt_fim: TDateTime;
+    public
+        constructor Create;
+        destructor Destroy; override;
+        property cd_tarefa : Integer read Fcd_tarefa write Fcd_tarefa;
+        property ds_titulo : string read Fds_titulo write Fds_titulo;
+        property ds_descricao : string read Fds_descricao write Fds_descricao;
+        property fl_status : string read Ffl_status write Ffl_status;
+        property fl_prioridade : string read Ffl_prioridade write Ffl_prioridade;
+        property dt_inicio : TDateTime read Fdt_inicio write Fdt_inicio;
+        property dt_fim : TDateTime read Fdt_fim write Fdt_fim;
+
+        function ListarTarefas(order_by: string; out erro: string): TFDQuery;
+        function qtdTarefasConcluidas( out erro: string): integer;
+        function mediaTarefasNConcluidas( out erro: string): integer;
+        function Inserir(out erro: string): Boolean;
+        function Excluir(out erro: string): Boolean;
+        function Editar(out erro: string): Boolean;
+end;
+
+implementation
+
+{ TTarefa }
+
+constructor TTarefa.Create;
+begin
+    Model.Connection.Connect;
+end;
+
+destructor TTarefa.Destroy;
+begin
+    Model.Connection.Disconect;
+end;
+
+function TTarefa.Excluir(out erro: string): Boolean;
+var
+    qry : TFDQuery;
+begin
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            sql.Clear;
+            SQL.Add('delete from tb_tarefas where cd_tarefa = :cd_tarefa');
+            ParamByName('cd_tarefa').Value := cd_tarefa ;
+            ExecSQL;
+        end;
+
+        qry.Free;
+        erro := '';
+        result := true;
+
+    except on ex:exception do
+        begin
+            erro := 'Erro ao excluir tarefa: ' + ex.Message;
+            Result := false;
+        end;
+    end;
+end;
+
+function TTarefa.Editar(out erro: string): Boolean;
+var
+    qry : TFDQuery;
+begin
+    // Validacoes
+    if cd_tarefa <= 0 then
+    begin
+        Result := false;
+        erro := 'Informe o cod. tarefa';
+        exit;
+    end;
+
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            sql.Clear;
+            SQL.Add('update tb_tarefas set ds_titulo = :ds_titulo, ds_descricao = :ds_descricao'
+                   +', fl_status = :fl_status, fl_prioridade = :fl_prioridade'
+                   +', dt_inicio = :dt_inicio, dt_fim = :dt_fim'
+                   );
+            SQL.Add('WHERE cd_tarefa=:cd_tarefa');
+            ParamByName('ds_titulo').Value := ds_titulo;
+            ParamByName('ds_descricao').Value := ds_descricao;
+            ParamByName('fl_status').Value := fl_status;
+            ParamByName('fl_prioridade').Value := fl_prioridade;
+            ParamByName('dt_inicio').Value := dt_inicio;
+            ParamByName('dt_fim').Value := dt_fim;
+
+            ParamByName('cd_tarefa').Value := cd_tarefa;
+            ExecSQL;
+        end;
+
+        qry.Free;
+        erro := '';
+        result := true;
+
+    except on ex:exception do
+        begin
+            erro := 'Erro ao alterar tarefa: ' + ex.Message;
+            Result := false;
+        end;
+    end;
+end;
+
+function TTarefa.Inserir(out erro: string): Boolean;
+var
+    qry : TFDQuery;
+begin
+    // Validacoes...
+    if ds_descricao.IsEmpty then
+    begin
+        Result := false;
+        erro := 'Informe o nome da tarefa';
+        exit;
+    end;
+
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            sql.Clear;
+            SQL.Add('insert into tb_tarefas (ds_titulo, ds_descricao, fl_status, fl_prioridade, dt_inicio, dt_fim)');
+            SQL.Add('VALUES(:ds_titulo, :ds_descricao, :fl_status, :fl_prioridade, :dt_inicio, :dt_fim)');
+
+            ParamByName('ds_titulo').Value := ds_titulo;
+            ParamByName('ds_descricao').Value := ds_descricao;
+            ParamByName('fl_status').Value := fl_status;
+            ParamByName('fl_prioridade').Value := fl_prioridade;
+            ParamByName('dt_inicio').Value := dt_inicio;
+            ParamByName('dt_fim').Value := dt_fim;
+
+            ExecSQL;
+
+            // Busca ID inserido...
+            Params.Clear;
+            SQL.Clear;
+            SQL.Add('SELECT SCOPE_IDENTITY() AS cd_tarefa');
+            active := true;
+
+            cd_tarefa := FieldByName('cd_tarefa').AsInteger;
+        end;
+
+        qry.Free;
+        erro := '';
+        result := true;
+
+    except on ex:exception do
+        begin
+            erro := 'Erro ao cadastrar tarefa: ' + ex.Message;
+            Result := false;
+        end;
+    end;
+end;
+
+function TTarefa.ListarTarefas(order_by: string;
+                                out erro: string): TFDQuery;
+var
+    qry : TFDQuery;
+begin
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            SQL.Clear;
+            SQL.Add('select * from tb_tarefas where 1 = 1');
+
+            if cd_tarefa > 0 then
+            begin
+                SQL.Add('AND cd_tarefa = :cd_tarefa');
+                ParamByName('cd_tarefa').Value := cd_tarefa;
+            end;
+
+            if order_by = '' then
+                SQL.Add('ORDER BY ds_titulo')
+            else
+                SQL.Add('ORDER BY ' + order_by);
+
+            Active := true;
+        end;
+
+        erro := '';
+        Result := qry;
+    except on ex:exception do
+        begin
+            erro := 'Erro ao consultar tarefas: ' + ex.Message;
+            Result := nil;
+        end;
+    end;
+end;
+
+function TTarefa.qtdTarefasConcluidas( out erro: string): integer;
+var
+    qry : TFDQuery;
+begin
+  result := 0;
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            SQL.Clear;
+            SQL.Add('select count(*) as qtde_tarefas '
+                  + ' from tb_tarefas '
+                  + ' where fl_status = ' + QuotedStr('FINALIZADA')
+                  + ' and dt_fim between dateadd(day, -7, getdate()) and getdate();');
+
+            Active := true;
+            result := FieldByName('qtde_tarefas').AsInteger;
+        end;
+
+        erro := '';
+
+    except on ex:exception do
+        begin
+            erro := 'Erro ao consultar tarefas: ' + ex.Message;
+            Result := 0;
+        end;
+    end;
+end;
+
+function TTarefa.mediaTarefasNConcluidas( out erro: string): integer;
+var
+    qry : TFDQuery;
+begin
+  result := 0;
+    try
+        qry := TFDQuery.Create(nil);
+        qry.Connection := Model.Connection.FConnection;
+
+        with qry do
+        begin
+            Active := false;
+            SQL.Clear;
+            SQL.Add('SELECT AVG(CASE fl_prioridade '
+             + ' WHEN ' + QuotedStr('BAIXA') + ' THEN 1 '
+             + ' WHEN ' + QuotedStr('MEDIA') + ' THEN 2 '
+             + ' WHEN ' + QuotedStr('ALTA') + ' THEN 3  '
+             + ' END) AS media_prioridade '
+             + ' FROM tb_tarefas '
+             + ' WHERE fl_status <> ' + QuotedStr('FINALIZADA')
+             );
+            Active := true;
+            result := FieldByName('media_prioridade').AsInteger;
+        end;
+
+        erro := '';
+
+    except on ex:exception do
+        begin
+            erro := 'Erro ao consultar tarefas: ' + ex.Message;
+            Result := 0;
+        end;
+    end;
+end;
+
+
+
+end.
+
+

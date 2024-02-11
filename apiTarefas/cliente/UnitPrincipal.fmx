@@ -1,0 +1,993 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Gestor de Tarefas'
+  ClientHeight = 466
+  ClientWidth = 1057
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object rectAbas: TRectangle
+    Align = Bottom
+    Fill.Color = claWhite
+    Position.Y = 406.000000000000000000
+    Size.Width = 1057.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object imgAba1: TImage
+      MultiResBitmap.Height = 24
+      MultiResBitmap.Width = 24
+      MultiResBitmap = <
+        item
+          Width = 24
+          Height = 24
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+            F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            01C749444154484BE595BF4EDC4010C667760DB13912640E0A88488114050529
+            8F409177E021A8D2440A181A0AF05D52A44C8D524469A810155D14294A19298A
+            7435D2157787C33F9F39EC1976F756BE7458595DC54F1AED37FEB4B267D7B30B
+            E306ED0833339BE1C4ADF0B52E08BD24F3DA00BBB9311D9076849A5C3B00A21C
+            989759C04A20F975967FFB6EEDFFA6AC60766A2B3A4BE3FD61B62EEBFEF2DB5E
+            D66CEA6C6E2A5A00A04563552187CBEEA0D1D2529807F7C0B978A2D66AA16A14
+            93386FA78E2A0883E8330A3AD09A48A815E2D55E16378CE940598190BC271812
+            1DC8D8A3803E59EB8133DA037F7B093D7AAC35114D4CA783D6297CEC1BD38172
+            0F106F3F40C1AB3A24E0ABBEEFBFB1961395FA20F4DF3D53DFB264AC0AB084CB
+            BFD7F12FAD2BF5810BA30A82E88B5AFD43AD11419D49F8B497BAF7417916F9DE
+            DA4FF4E01C047688B95B4B6F8E2FE0876ACC874EB907F5E9AD1524AE695D907C
+            0441FE3B499AE7C674A0FC8BB8C06D42087530725DF4C586B59CF0ECA86AE13F
+            67D78D936162FAE0E550ABEA26775E145EFEDCA6F7820293E42A369755A53E50
+            47C885FA9276D59003EED8A9FF76F2E6572438D29A04FA40102659FCDE980E94
+            2F18D7A53F6600EE00F89BB599E102F30E0000000049454E44AE426082}
+          FileName = 
+            'E:\DESENVOLVIMENTO\Delphi\Projetos\Montreal-BDMG\testes\Firemonk' +
+            'ey animado\Fontes\Images\grid.png'
+        end>
+      Align = Scale
+      Hint = 'Lista Tarefas'
+      Position.X = 5.577848911285400000
+      Position.Y = 2.000000000000000000
+      Size.Width = 211.400238037109400000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+      OnClick = imgAba1Click
+    end
+    object imgAba2: TImage
+      Tag = 1
+      MultiResBitmap.Height = 24
+      MultiResBitmap.Width = 24
+      MultiResBitmap = <
+        item
+          Width = 24
+          Height = 24
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+            F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            02F249444154484BB5964F4854411CC77F336FDEBA54B011D5A6AB91872EDE6A
+            A5288ABA5860DD02155C5BBAA8047AE9D449F014111441428728D914420B2AEA
+            5A976E1E8CC8A53A188466BB6E2E11ABFB6667A6F9CD0EEA7BFBA70EDB07DECE
+            BCEFCC9BDFFC7EF39B1F0BFF1B62DBAA0CDE9F738B3BDB8E0950BD12E0844344
+            8C030B51051907E402007D4E79E1E5E495F6BCFDA4829A0606A696BB15D07102
+            246EA5EA70580517EE6DB8706BA627FADBAA9B5418483E5461E166EE10024356
+            FA2784526947B04BA9E4DEB4950C3E0323AF65D3DA5A76568B17ADE443298092
+            54E03AD51D9712B24441D7E3CBD1F756026A5B433E97BD5B6B71241671E0DAD9
+            DD350D500AFB0495AFFAA657A256DA32D09FFA7E41BF0DDAD7AA1CDAE342675B
+            13EC08553780304263AE24B7B5BB66923170E68D62949071ECD7034354EED8B6
+            069CF0DEE4F4EA51EC1B03B1A5CC7120C4088DC005970A2587C7C6948E9AC6A1
+            AACF8C341209E7173B72CDE5335070D2B4160C855752500C3C984188272AC7B8
+            D6B643246F165E296E0E62E0D18F15EDD7E6C9C7220C12F15D40036719093BD0
+            A233E9CB2A875260C1025730F1EE97CF90946AD878C05D60466930842AD7EC31
+            31B9FC9930E7B051351822DC897F8F00A7DAC330723A02433359C8AFEBEAB40D
+            F4D6773FB87689B184F14031F2C188165D2620C40834051E9DCB663CA4170A8E
+            555E3E9657927C340688AE8A466B203A38F3C5F0FE74394DBDC20B0E2A67461A
+            867A30D3433C6300EB395364C2E875C0D0953BB6AD89FAE478EB4FB1670C20C5
+            10DCD4E7EA2BB541BEFEE430F7AD08052F78FCDBE05C482946F5A637F0D5B797
+            FED472870ED85BAC8A56F2F1B7726DB99EEA8FDEB0FD2D0F90A98196059D10E7
+            4A2097ACE40343547371BD73FDEB5B1CF119402613D1F990473B95504F38707F
+            B2D700432B1DB73BB83852D7D7E454362E94B80A9274959CD2017DE15D338097
+            08F35CA72266CB06F39ECDF61E5C376301EA1A40B0E42EB6E79A15E347F4F456
+            FD4720A4BFCA8028A68BE1D634A6A29D5A05803F56AE2E32F138405700000000
+            49454E44AE426082}
+          FileName = 
+            'E:\DESENVOLVIMENTO\Delphi\Projetos\Montreal-BDMG\testes\Firemonk' +
+            'ey animado\Fontes\Images\add.png'
+        end>
+      Align = Scale
+      Opacity = 0.400000005960464500
+      Position.X = 214.923767089843800000
+      Position.Y = 2.000000000000000000
+      Size.Width = 211.400512695312500000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+      OnClick = imgAba2Click
+    end
+    object imgAdd: TImage
+      MultiResBitmap.Height = 48
+      MultiResBitmap.Width = 48
+      MultiResBitmap = <
+        item
+          Width = 48
+          Height = 48
+          PNG = {
+            89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+            87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            08B6494441546843ED596D6F54C7153E67E65EEFAED7F67A8D3136E63D31061B
+            829392028216A34A6D4155154571531550940F4D3F54557F02E22754553F241F
+            2A5144D40252A540805489022581B60911D8D880C1149917636C6CFCB6BBF6BD
+            774E9FB1AF2D888D6BF0052B128F34F6DD9933739FF33267CEECD2771D1CFE8F
+            145B3F17A7ACEB5E3C7F28E3D8CF9964BE7F6F7E59EED436F6470522840AFF47
+            0A4B3E96A372CF7597D9669F6D5F381C2922F5C01E58FE665F77223B4495CA98
+            35E82A1B1BA17B46A98B8924DD5E9C2ACDEE8DD013917AC0920F405E93D431CB
+            76B486B06DB77D76CCCA84E29120120FBCF7FED7EE50FE324B6C11697F9D12AE
+            21926A129A47600FDC1796563CB768721BB51EBEE70DB37D7752F29C52F2FCE4
+            E842DF82B07AE07A7937F6BD9B7E10764D42240AECDCDF5DA4B5B7D808D7B1A8
+            1F1199A4103529A6BB2061C4040BD0FF0A69CE429993624C3B5EADA1DB32FCFB
+            01932C0D977A0458E3BC11DAF7E1AE05E7C3AE49985508BDF7B5B8EFFCBDB7D8
+            657F2905FC2A8B81E54DD230F7C0324D813167E08D335AE94652F08248BE90D4
+            304316E4995509FC93172E37012153EC91A9C31A3088290EBBA7C4AC3C60C99B
+            ACB79C82E055A3A85E11C70DAC068B3629A55A025F77C50A4546FAFD52A5F42A
+            43C12B78E56B63B3F91BA5F8BF50AACF18333CD63706AC53274ADE61520F30B6
+            F7C0EE8A93E1D0243C95071A0E4ADEEE7DB7E6F9839915088FD7B0CA6A453A2E
+            4C5D4AA4917D7321DEEF771CD85DDAFFE737E60FE462DE5DF25523641AF1CA4E
+            6B35165A40814913ABFB46252FDEEF19386B89DA66486004F5D8B87F184FA540
+            3C7BBB901C67A556CE06C4F636BC6C311CFF15681D1143CD891C75F7A6174E58
+            9579F1482691E9F1C96F21638E80F4BFD15D216CB622E43629935B9D2E2D2F1C
+            937E323C5108FDF40FADB17469B250195ECE4AAF6709AA61830A2CD341EC1F37
+            C66D74FCF9BDFBDEE55C38E511FCEE9889F56687523A33B456987718964A6CD2
+            2E56DCCA64FEE36AB95E5038D8DF73BF701342708F9D13690859F22C4E35B3FE
+            3E1BDA8C2C51861D77D6881C219F2E59F2992479A1F824946C672F9D48F6F9E4
+            5D110E3E62235F6AE134C269A304BC6964846B07070A8A42F11961461E18B55C
+            77670A565B016BAD4726A962E252A4C33B88FB6323C372717070B0FFC4EF573E
+            B2191F87868317F38AA4A82067E2B51CD00E64221B820F48D3B5C0045F296427
+            50DB09D19C68FDA703BF9C8FF09C1A33F240487EADD2B4D95A3E24FF2F64F8A3
+            8EEFB65AF21B7AAA1E6BF96FA3A6B9D6EFE7FE4178ED1AD2E9C7E83A83F553E2
+            D34645CE1616AE84771B71F8FD9347FCEEB15953635A0F8C5B1E7ABE2C9A372A
+            432F23BDA5E0819B22E6980E4C732E513970E8173C124E7922584FB85E61D295
+            780D52EC0E126D0FB421A3A4175EB80B6F5C63D1E70EEC2EEB189B3119D37A60
+            DCF2963C07F23DA89B84BB4F238C3EC25EB86AC9D734C38E4F09EB09CF1D1822
+            2FD36644213BC929583D8670AAC2F9B048934A0BFB930EBA8731A507DEFA5B7B
+            223F4B25BE137F0915CB7A587BB966558045DBD18E8FC4862EA57B7B331FFC66
+            FD8CC3663AD8FB43AAAD3B515840AB94176C27A59693F83EB173039BFDAC046E
+            EB705EC9FDC36FAB6C386502933D20C2F9945F62DCBCD7B5987A6B798D13964C
+            705AB1F9181EB86EC957DC39128433668D53F514F4BD549A1D1EF26E18571D85
+            274E0A7634B8D49251F544C1C698D333CF720BA74CE0918E9FBD7F3B3F951F2B
+            2147AA3908B6A0185B2282BF6CDAD03EC939FAF2B3BA5959E084D7D9DE3BB1A2
+            A4B31296FD09BC5F058ADA98E0166C7D5A19FF72224DDD1FFCBC32134E79C803
+            D0CE9267156CE0C0DF8AE373B5D8035FC929A383E3BEC88D51F2B0563823721C
+            6A2093C009AE03EF263974C2B03A298178C84A5550662BE5B99BB2BD895284F1
+            84E1F120BCEB2F77F3B1F34B59EB6A5046AA445EC6D18889574579FF4814F095
+            DEDCC261649B6746FE61584FE4CF27573A3A571AC33F06A72A529C870D7E1B55
+            C097F0C8E5E17ED575E8B76543BC678FA8CBABEE2E710DDB93752D482F817E7D
+            88FD2F94434DAE8EDFEAE7549FB58EBD9C84EF78B680851B0E9172BDBE221564
+            2BB11DD630E92D48DF69D8F50EF6C54547C54E5F6F4DB5ABB6D53D358E4FB5B0
+            F81AB806758DE9C7466DC52A17525D655716B5A41E8C5AFE7991B7C0BBEC3BAB
+            5A537DC3F1F25631D24846AEE0F0EC03F90A115AEB9157BB7479678D626FE42D
+            50DBC6012F461DDE873AE733A4CD4F7410BF55D2C3DEDEBDF6623437B0EFB6E7
+            4C3216BF8D2CF8A952F479C0D24B2A5888345B8FF3E94DBB89CB7030C510369D
+            D0FC120AAD26654CA7C47295D7577454EFDC7FF5A9CADC28D070B0D9BDBAB23D
+            95CD661C1CA8ED3E195C53B9052EEA406AC40167CA70E3C34665FE861472BCF2
+            3E532676875D5D8E307C0307CA9BCA145486EB3D778C9619E4AE504E6C194AF7
+            F82837CB91E82832E43928D2AAE086E68050D36869CAE9CAB603BBE60D803C4A
+            5AB50E0AAC23474D7B277D9650415EB161671DD2E13A615D64B9598E1954BF38
+            9F9A91555A542072C173BC6B83B8488C671AA39483545534DAF01CAEF7DC61BF
+            72C17EFCE168B35FBFD8CD0D8EB6FA1DCE65DB022D17D45F7F55DE79F8ED253D
+            2776A0961FCF347EA071238AD9669F47FBE6029E9F44AC2FB56DE2BB2370B4F7
+            8EC3BF5ED263B94FAE85BE6398B21ADDB9BFA37EA677528BF17B03826F465FE0
+            0AAB5CBA7441DF1F77A8696F7033E1118907C6EF0DC67537CFA459D9B18BD2EC
+            11890248BBC5A859EBD8984D28036A94D08AA99A1DB332A3B298134E9F152251
+            4024480B19DCD8F875C4E4027C4E4CD5EC9895B1B2F89C0EA7CF0AD128105002
+            2548851153828FFD20D93E65C39895B1B276CEE8E45922D22C849B1B2EE372CE
+            107D3A55B3635626148F04912A002B6783403A3EDC597E7DAA66C7AC4C281D09
+            A255600EF04281B9C60B05E61A2F14986B4C5B8DDA5F0BD9F03EFB9B55383425
+            66FAA3DCB358775A05EC4F9DB88EDDF87F3FB859423ED13297D4F9992810E5BA
+            D386102616E3257578AC9FAE59192B8BE71921BA7589FE07C3FDAF26F2134CF7
+            0000000049454E44AE426082}
+          FileName = 
+            'E:\DESENVOLVIMENTO\Delphi\Projetos\Montreal-BDMG\testes\Firemonk' +
+            'ey animado\Fontes\Images\home.png'
+        end>
+      Align = Scale
+      Position.X = 422.800567626953100000
+      Position.Y = 2.000000000000000000
+      Size.Width = 211.399566650390600000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+      OnClick = imgAddClick
+    end
+    object imgAba3: TImage
+      Tag = 2
+      MultiResBitmap.Height = 24
+      MultiResBitmap.Width = 24
+      MultiResBitmap = <
+        item
+          Width = 24
+          Height = 24
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+            F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            02F849444154484BD5944D48555110C767E6DE23D987445051161141857D2C5A
+            44B4128230482AC25D94AFF712133268D5A2452E22295C848420E5CBC245E522
+            22CC45D2AE88685750847D807DD9A2527AA6E79E99CEB91DAFBD9EDEC25DBFB7
+            987BE7CC9DFF3933F30EFCF7A0B7453434C85CA3254720FBB49875441010D31B
+            20ECD7863ABABBF1A30FFD2B250247EA793B48741D42B5C2BB8A10D0A320E1D1
+            4B5DD4E35DA990B731B91C6F038A065C7223E6011BD96F442A272258C620BB58
+            F82E825A00105D6BC872C67F964A72824387648E0AF5739B609511BEB8722535
+            B7B420FBE5846C464EDA929DD55A1730509BF2797CE597A62539815270D02517
+            300F674AEEB89CC75610EE554ACD0D914F78F78C2402C8BC27B6426D33259F84
+            11CFC70FC6C4DFA431D503C36B9D118247F17B0A2323F844473A72BD6A6A92F9
+            DE3D2D8980097EF503114CEC48A1AACA0E93FB5982C06E298564919006E30703
+            5B629BC2D0906CB43D5046F4707B3B8D78F7B44CF540B0CF5941698E1D2920C8
+            716709833BB1238544A0300E79D0FA1302EDCC1DE653DE5D42EEB0D4DB2A66EC
+            98EA80B1CDBB67A4E89F9CCD728DD1D16D777C01BE4582E75E0CE2E3EA6AE077
+            6F603306DC0C68EAED50DBEFF4FB711D6E15811F76C427BABA68D4A729A2E4AA
+            B022B5A4A32BF68FB1C8BDDB8DB24D601BAA02FF3E4E210E0518AE01D1DF01D5
+            3C375121A91E52D0D4D989051737498980A3B19197682DC788651F10AFB7BB24
+            017C0B487D8878416B1C56817E8DA816BA46DBC95B40A0CAEDA907BE7EC3DADE
+            5E1AF3A9A617F893BA3A096EDEC4647C33195E1C120EBB9E7D2984AB2B2A604D
+            1045F7ECA9970A737FF907DCDBDE4FE32E36758627F93DB943299CB0C532ACA0
+            C225B7F57F2A10EE888784A8666CB99CF1A1FF26F027B6CEDF40821BAE2C6EE7
+            B983BCE1D2557A2665E15EB78E913910075A6625E0C0907262F8BE2B0B4234E0
+            AE7A7B8355C68B6AEA3698B5809B162AA3DD8988E0437BCFF4BA3591201F0759
+            662DE04844843B6C4FBE8AE8CFF6B9F5E5209DF621FF3D003F01A4D643225545
+            95470000000049454E44AE426082}
+          FileName = 
+            'E:\DESENVOLVIMENTO\Delphi\Projetos\Montreal-BDMG\testes\Firemonk' +
+            'ey animado\Fontes\Images\search.png'
+        end>
+      Align = Scale
+      Opacity = 0.400000005960464500
+      Position.X = 630.676696777343800000
+      Position.Y = 2.000000000000000000
+      Size.Width = 211.400512695312500000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+      OnClick = imgAba1Click
+    end
+    object imgAba4: TImage
+      Tag = 3
+      MultiResBitmap.Height = 24
+      MultiResBitmap.Width = 24
+      MultiResBitmap = <
+        item
+          Width = 24
+          Height = 24
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+            F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            036349444154484BB5945D681C5514C7CFB9F3B569284DD5EC3646F314A4A5A6
+            A211DB87521424BE2858B40D64779356441F7CB06AB518C134D04FB55441048B
+            F523BBD360EA4B10C106F5A196165AC440A028041F8234BB89AD166D92D99939
+            A767762FB4DB9D6469893F18E69EFFFDDF73E6DEB9F722D4616080D51FEDB33B
+            08C29D8AA8C3374365B139C1A8BEF2ACD4F193DB31D4D658962CD0F7C5DF4DA1
+            ED8D222031C261CFB4CED99E348D602387F896581A15F9CFE4FAEEBB5C1951CB
+            A205B68DB0E1F8C59FC47221DF937C131059775560C6AC3BB38F099E5C319FDC
+            7CEC65F4754F154ABF6B704AB3AF30F1FCADC9336EE1D96C7EFAE948CB6552EF
+            A00185B9C699D775770DB105A2752728BD2DCD433727CF0ECF3C10027E242B76
+            ACF7446143A429507B08FC5D2F7DCA56D9740BB14BD4E7CE76924FDF952C726C
+            56BF03F29458EF92AE0E42DE25694308F9638530CAC017D1C77EB4F0B9A14CF2
+            7425C30D626740440FB2C5DFAFFA8F5AC5F086D84E12F1C1A6D557DBDC9E35C3
+            6E4F722434B8234A2E336C031BCE4AE1F57A787DD26EE1D56CBEF8A10EEB22DE
+            FD32A65F8755C4CE4011FEC3C84D3AAC0FD36AC570454755C42F11E004133EAA
+            C3BAB0C2C7948CD16115B105DA279BC749C1CACC50F1212D2D4A76F8D23AE2A0
+            D5B9963CAFA52A620B0C0E2299081FA082F7A303A5E558988CF71458476FFBA0
+            2D98C94F88D9CE9E9839125B44B44CBE70504E49F38A6BC9A35AAD61C9AFDB36
+            726555C22FC975410680D9AF4AD6D9B946E684EF6F920A0788D04CD8DE13C7BB
+            DB627F70C492052232F9E2A09836C861BBBB04DC6143201BC69C40509799613C
+            9F490D686B2C4B16E8FDF2AF56B2C22362FA2D974EEDD57299AC5BDC2B77C85A
+            F907BBDDEC3D7F6AB90653BFCB3CFFF5544343E06C912FEB92E7290EC294C83F
+            B282B18AE306658D606DA0C2F174AE58408453F28CCD9BDEE96FBADBE6B5AD32
+            8374AEB04976CCBB0194369B60FF2AE2985C1763ED932DBF443BAAEC5C84E862
+            9C6C9FEE544A75C98CBA24C7C306D93F1B8A0787D22DE7319D9B7E5C11BB68A9
+            3DE69C31FAF98BCDFFEAB177C40B9FCDAE2C35D05684E01091D58D1977FA8CE8
+            87F3E9966F2B96E5A13757D82ACBF89A424F3DB260FA3F687DD948CC85A702C0
+            4EE5399EB3FEE2FD9ED6978D964BF72E84E025163DC9CB056E77A742079CFFA5
+            90071E5D071DC165C466FF34FE0000000049454E44AE426082}
+          FileName = 
+            'D:\99Coders\Posts\263 - Criando um menu de a'#231#227'o animado ------\F' +
+            'ontes\Images\perfil.png'
+        end>
+      Align = Scale
+      Opacity = 0.400000005960464500
+      Position.X = 842.077087402343800000
+      Position.Y = 2.000000000000000000
+      Size.Width = 211.401184082031300000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+      OnClick = imgAba1Click
+    end
+  end
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 1057.000000000000000000
+    Size.Height = 406.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 2
+    TabOrder = 1
+    TabPosition = None
+    Sizes = (
+      1057s
+      406s
+      1057s
+      406s
+      1057s
+      406s
+      1057s
+      406s)
+    object TabLista: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabLista'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Label5: TLabel
+        Align = Center
+        StyledSettings = [Family, FontColor]
+        Size.Width = 120.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Aba 1'
+        TabOrder = 0
+      end
+      object Grid1: TGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Size.Width = 1057.000000000000000000
+        Size.Height = 381.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+        Viewport.Width = 1053.000000000000000000
+        Viewport.Height = 356.000000000000000000
+      end
+      object NavigatorBindSourceDB1: TBindNavigator
+        Align = Top
+        Size.Width = 1057.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        DataSource = BindSourceDB1
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+        xRadius = 4.000000000000000000
+        yRadius = 4.000000000000000000
+      end
+    end
+    object TabCadastro: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabCadastro'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object lbTitulo: TLabel
+        StyledSettings = [Style]
+        Position.X = 25.000000000000000000
+        Position.Y = 96.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Titulo'
+        TabOrder = 11
+      end
+      object edtTitulo: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        StyleLookup = 'transparentedit'
+        TabOrder = 1
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF2A2F32
+        Position.X = 25.000000000000000000
+        Position.Y = 122.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style]
+        object lineNome: TLine
+          Align = Bottom
+          LineType = Bottom
+          Position.Y = 39.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDimgray
+        end
+      end
+      object lblDescricao: TLabel
+        StyledSettings = [Style]
+        Position.X = 25.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Descri'#231#227'o'
+        TabOrder = 5
+      end
+      object edtDescricao: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        StyleLookup = 'transparentedit'
+        TabOrder = 2
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF2A2F32
+        Position.X = 25.000000000000000000
+        Position.Y = 218.000000000000000000
+        Size.Width = 1008.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style]
+        object lineSobrenome: TLine
+          Align = Bottom
+          LineType = Bottom
+          Position.Y = 39.000000000000000000
+          Size.Width = 1008.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDimgray
+        end
+      end
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Style]
+        Size.Width = 1057.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        TextSettings.HorzAlign = Center
+        Text = 'Cadastro de Tarefas'
+        TabOrder = 7
+      end
+      object lbPioridade: TLabel
+        StyledSettings = [Style]
+        Position.X = 353.000000000000000000
+        Position.Y = 272.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Prioridade'
+        TabOrder = 4
+      end
+      object DtIni: TDateEdit
+        Date = 45331.000000000000000000
+        Position.X = 452.000000000000000000
+        Position.Y = 122.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style]
+        TabOrder = 16
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF2A2F32
+      end
+      object dtFim: TDateEdit
+        Date = 45331.000000000000000000
+        Position.X = 709.000000000000000000
+        Position.Y = 117.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style]
+        TabOrder = 15
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF2A2F32
+      end
+      object lbDtIni: TLabel
+        StyledSettings = [Style]
+        Position.X = 453.000000000000000000
+        Position.Y = 81.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Iniciada em '
+        TabOrder = 9
+      end
+      object lbDtFim: TLabel
+        StyledSettings = [Style]
+        Position.X = 709.000000000000000000
+        Position.Y = 77.000000000000000000
+        Size.Width = 172.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Finalizada em '
+        TabOrder = 8
+      end
+      object retSalvar: TRectangle
+        ClipChildren = True
+        Fill.Color = xFF2A2F32
+        Position.X = 737.000000000000000000
+        Position.Y = 268.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object btnSalvar: TSpeedButton
+          Align = Client
+          ClipChildren = True
+          Cursor = crHandPoint
+          StyledSettings = []
+          Size.Width = 300.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Salvar'
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claWhite
+          OnClick = btnSalvarClick
+        end
+      end
+      object retCancelar: TRectangle
+        Fill.Color = claWhite
+        Position.X = 737.000000000000000000
+        Position.Y = 334.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object btnCancelar: TSpeedButton
+          Align = Client
+          ClipParent = True
+          Cursor = crHandPoint
+          StyledSettings = []
+          Size.Width = 300.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Cancelar'
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claDimgray
+          OnClick = btnCancelarClick
+        end
+      end
+      object cbStatus: TComboBox
+        Items.Strings = (
+          'NOVA'
+          'ANDAMENTO'
+          'FINALIZADA')
+        Position.X = 24.000000000000000000
+        Position.Y = 316.000000000000000000
+        Size.Width = 273.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 25
+      end
+      object Label4: TLabel
+        StyledSettings = [Style]
+        Position.X = 25.000000000000000000
+        Position.Y = 273.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Status'
+        TabOrder = 3
+      end
+      object cbPrioridade: TComboBox
+        Items.Strings = (
+          'BAIXA'
+          'MEDIA'
+          'ALTA')
+        Position.X = 351.000000000000000000
+        Position.Y = 312.000000000000000000
+        Size.Width = 273.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+      end
+      object Label6: TLabel
+        StyledSettings = [Style]
+        Position.X = 25.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 72.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        Text = 'Codigo'
+        TabOrder = 10
+      end
+      object edCodigo: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        StyleLookup = 'transparentedit'
+        TabOrder = 0
+        FilterChar = '0123456789'
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF2A2F32
+        Position.X = 25.000000000000000000
+        Position.Y = 56.000000000000000000
+        Size.Width = 136.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style]
+        object Line1: TLine
+          Align = Bottom
+          LineType = Bottom
+          Position.Y = 39.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claDimgray
+        end
+      end
+      object Rectangle1: TRectangle
+        ClipChildren = True
+        Fill.Color = xFF2A2F32
+        Position.X = 177.000000000000000000
+        Position.Y = 44.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object btPesquisaTarefa: TSpeedButton
+          Align = Client
+          ClipChildren = True
+          Cursor = crHandPoint
+          StyledSettings = []
+          Size.Width = 120.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Pesquise'
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claWhite
+          OnClick = btPesquisaTarefaClick
+        end
+      end
+    end
+    object TabPesquisa: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabIPesquisa'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Label7: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Size.Width = 1057.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Pesquisa'
+        TabOrder = 0
+      end
+      object Rectangle3: TRectangle
+        Align = Left
+        Position.Y = 37.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 369.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object rbTotalTarefas: TRadioButton
+        StyledSettings = [Style]
+        Position.X = 8.000000000000000000
+        Position.Y = 85.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 23
+        Text = 'Total de Tarefas'
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        TextSettings.Trimming = Character
+        OnClick = rbTotalTarefasClick
+      end
+      object rbMediaTarefas: TRadioButton
+        StyledSettings = [Style]
+        Position.X = 10.000000000000000000
+        Position.Y = 177.000000000000000000
+        Size.Width = 191.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 22
+        Text = 'M'#233'dia de Tarefas'
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        TextSettings.Trimming = Character
+        OnClick = rbMediaTarefasClick
+      end
+      object rbTarefasConcluidas: TRadioButton
+        StyledSettings = [Style]
+        Position.X = 10.000000000000000000
+        Position.Y = 129.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 21
+        Text = 'Tarefas Concluidas'
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claDimgray
+        TextSettings.Trimming = Character
+        OnClick = rbTarefasConcluidasClick
+      end
+      object pnPesquisa: TPanel
+        Align = Center
+        Size.Width = 809.000000000000000000
+        Size.Height = 353.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+        object edTotal: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claDimgray
+          Position.X = 16.000000000000000000
+          Position.Y = 40.000000000000000000
+          Enabled = False
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Style]
+        end
+        object edConcluidas: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claDimgray
+          Position.X = 16.000000000000000000
+          Position.Y = 80.000000000000000000
+          Enabled = False
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Style]
+        end
+        object edMedia: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claDimgray
+          Position.X = 16.000000000000000000
+          Position.Y = 128.000000000000000000
+          Enabled = False
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Style]
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem4'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Label8: TLabel
+        Align = Center
+        StyledSettings = [Family, FontColor]
+        Size.Width = 120.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Aba 4'
+        TabOrder = 0
+      end
+    end
+  end
+  object rectMenu: TRectangle
+    Align = Contents
+    Fill.Color = xFF5DA5E9
+    Size.Width = 372.000000000000000000
+    Size.Height = 534.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Visible = False
+    object lytMenu: TLayout
+      Align = Bottom
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 204.000000000000000000
+      Size.Width = 372.000000000000000000
+      Size.Height = 320.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object imgFechar: TImage
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              04BE494441546843ED9A5F8854551CC7CFFC5967459C9D11755753115B120261
+              C590ED210A2B4809C4B0DE8A7AEBCF53F490ED464F49F610480449480F3D04A1
+              891194944669D2434111B5590FA1B9ED560FBBB3BBE5CECCCE9F3EBF7B7F77BC
+              EEBA73FFCE9FA00F1CCEEFCCCCF99DEFF79E73CFDC7B67CCFF749884D691A8D7
+              EBBD94758443D4C3D483D403948DC469CAB5643239413D9148242E515FA4FE85
+              FA2FEA1A7568221940E05ACA6ECA816AB5BAB756ABF567321911DC9452A9544E
+              A552BF62EA14063EE4A56F894BF6BB6D00A159CA33954AE52BC44706F31F90EF
+              A0A66F2D0CB41FE15FEBD8B1512C162B62847048878A1712E718E07506AA5923
+              B68E0207E969EAA40E1D1D926DE3A87F61A56F131CAC631859A512C24392DB17
+              16167ED4BC6D051327193FAB5282438E2D1CF9EFEC749D0113EF6222A392FC43
+              DF1CE22FD8693A8B9C7B2ACB3FD249FB7705CCC2632ACD1B3EBC57FB750DE572
+              F90AD55695D860C956C587D662E0B036BB869E9E9E2DE81A415F8FBE64713303
+              8FF035BF539B5D05BBE1A3E8DBA14D8B1B0CF0661E974F68B3292F7F3A6D5E3A
+              3365668BE1AFC5A4AFE4905C7EE03A4B2E1A9FD2A6C56203BB39FA7768B32915
+              745F9EAA98239F154299903ED25772482EBF300B0739C8FDDABC6E00F1E2EE61
+              6D7AF2DC3D7D66732E6DC60B1573F8ECB429CCFB573157AA9957112F7D376453
+              E6D9BBFBF41D6F98851CD501D12B6DB781756C9D0F68D393D599A439746FCE32
+              31395B35AF9CF36742C41F3957305755FCC87D79D3D7BBE4546C0A5A1F14BD12
+              377A725DBE8BA9D9A04D5F0435118778019D83A2576277EF61A6277036BF26E2
+              122FA4D3E9012AB9F3BB6E0057B76918182F13718A17B8A3931BAAED1237B2B0
+              A63669188AE54CC42D5E60A524D06B2DF7C63D31DBD3CF4C4DE85970700B1E58
+              9D32C944C24CCCC627DE810DE707F4EE70675BA175249C99D8984D9B3FE6AA96
+              F87E8CC4295E6006AC9B1D77C66B5AB7847A5D839860179A93BA6180170A1A46
+              C2594272E46509C94CFCC94CF8FD9E08C0120397350CCDE21376F4FE3C25F897
+              9D17EC4215F45E91D86DE0270D43B1DC6E13F4CBCE27D38E5EB7812FC5993603
+              E1B555C66D82DD6752F44ADC1885B37A4C1EF769D3375EE21DE2348178794A32
+              26B17B06A6E459A5367DE157BC435C26D02ACF54A724761B9013E334CBA8AA2F
+              3525A87887A826F8C21DA7FA58F44A7BF188DF73EFF989C64D79EDF3194BFC26
+              848CFA14EF20269EDF93B3FA8A89A3E767F41D6F58FFC75929FF68F34603BC31
+              8FB3B79905CF47DD697A6E5D93368710920D20DE41FA485FC921B9FC502E9727
+              A9DEB15BCBC0C9B182EB8C8FA8BB0EAE4047556673F8EC50B1589CB5BB750DDF
+              60608D4AF4860FCB23EEAE400E267AEE5469FEA05F92A574DC4ED15910FFA4CA
+              0A061D5762E284E6E90868185139E120471E13EFD9E9DA87FC1204A384D17F49
+              25492F26DEB032B7015DF3E1964D33C8FD387BF16FF630AD417E4044FC5D3A64
+              FC907C3BB3F12647695EC78C050ECC5572BF4098D7A15A0B03EDC2C85B1899B1
+              148440D639C2C711FE226550530722F209C2C0F278E321F4EC23DE862979E894
+              BDD94332BDDF98D6EBF931CAFB943394BFED4F0427B6FF4A50ADA7DE4919E69A
+              EA568CDC422C66C4C802AFC955E4EF88BD44B9482CFF9988FC5F89FF38C6FC0B
+              11C976609E4515550000000049454E44AE426082}
+            FileName = 
+              'D:\99Coders\Posts\263 - Criando um menu de a'#231#227'o animado ------\F' +
+              'ontes\Images\fechar.png'
+          end>
+        Align = Top
+        Size.Width = 372.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Center
+        OnClick = imgFecharClick
+      end
+      object lbListaTarefas: TLabel
+        Align = Bottom
+        StyledSettings = [Family, Style]
+        Position.Y = 140.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 24.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'Listar Tarefas'
+        TabOrder = 4
+        OnDblClick = lbListaTarefasDblClick
+      end
+      object Label2: TLabel
+        Align = Bottom
+        StyledSettings = [Family, Style]
+        Position.Y = 200.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 24.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'Cadastro'
+        TabOrder = 3
+      end
+      object Label3: TLabel
+        Align = Bottom
+        StyledSettings = [Family, Style]
+        Position.Y = 260.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 24.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'Inicio'
+        TabOrder = 2
+      end
+      object AnimationBtn: TFloatAnimation
+        Duration = 0.600000023841857900
+        Interpolation = Circular
+        OnFinish = AnimationBtnFinish
+        PropertyName = 'Margins.Bottom'
+        StartValue = -350.000000000000000000
+        StopValue = 10.000000000000000000
+      end
+    end
+  end
+  object MemTable: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 336
+    Top = 344
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = MemTable
+    ScopeMappings = <>
+    Left = 608
+    Top = 344
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <>
+    end
+  end
+end
